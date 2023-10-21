@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <title>Balloon Inflating Game</title>
+    <style>
+        #balloon {
+            width: 100px;
+            height: 150px;
+            background-color: red;
+            border-radius: 50%;
+            position: relative;
+        }
+    </style>
+</head>
+	<body>
+    <h1>Balloon Inflating Game</h1>
+
+    <div id="balloon" style="height: 270px; width: 270px;"></div>
+
+    <button onclick="inflateBalloon()">Inflate Balloon</button>
+
+    <script>
+        var balloon = document.getElementById("balloon");
+        var size = 100;
+
+        function inflateBalloon() {
+            size += 10;
+            balloon.style.height = size + "px";
+            balloon.style.width = size + "px";
+
+            if (size >= 300) {
+                alert("Balloon popped!");
+                resetGame();
+            }
+        }
+
+        function resetGame() {
+            size = 100;
+            balloon.style.height = size + "px";
+            balloon.style.width = size + "px";
+        }
+    </script>
+
+	</body>
+</html>
